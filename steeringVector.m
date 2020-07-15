@@ -49,7 +49,7 @@ e = zeros(M, N, P);
 for y = 1:M
     for x = 1:N
         if(use_gamma) 
-            e(y, x, :) = exp(1j * k * cos(thetaScanningAngles(x) - gamma));
+            e(y, x, :) = exp(1j * k * cos(thetaScanningAngles(x) - gamma)); % do we need radius here?
         else 
            angleT = [sin(phiScanAngles(x)) * cos(thetaScanAngles(y)); ...
                       sin(phiScanAngles(x)) * sin(thetaScanAngles(y)); ...
