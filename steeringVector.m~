@@ -48,13 +48,17 @@ ant_posi = [xPos; yPos; zPos]';
 e = zeros(M, N, P);
 for y = 1:M
     if(use_gamma && N == 1) 
-        e(y, 1, :) = exp(1j * k * radius * cos(thetaScanAngles(y) - gamma)); % do we need radius here?
     else
-        for x = 1:N
+        
+    for x = 1:N
+        if(use_gamma) 
+            e(y, x, :) = exp(1j * k * radius * cos(thetaScanningAngles(x) - gamma)); % do we need radius here?
+        else 
            angleT = [sin(phiScanAngles(x)) * cos(thetaScanAngles(y)); ...
-                     sin(phiScanAngles(x)) * sin(thetaScanAngles(y)); ...
-                     cos(thetaScanAngles(y))]; 
-           e(y, x, :) = exp(1j * k * (ant_posi * angleT));
+                      sin(phiScanAngles(x)) * sin(thetaScanAngles(y)); ...
+                      cos(thetaScanAngles(y))]; 
+            e(y, x, :) = exp(1j * k * (ant_posi * angleT));
         end
+    end
     end
 end
