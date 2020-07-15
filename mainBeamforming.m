@@ -29,7 +29,7 @@ inputSig = inputSig'; % P by L (L is number of samples)
 c = 3.40e2; % Speed of sound (m/s)
 fi = 19e3; % center frequency of FMCW from 18kHz - 20 kHz
 
-ebi = steeringVector(xPos, yPos, zPos, gamma, true , fi, c, thetaScanningAngles, phiScanningAngles);
+ebi = steeringVector(xPos, yPos, zPos, gamma, rad, true , fi, c, thetaScanningAngles, phiScanningAngles);
 wi = weightingVectorMVDR(inputSig, ebi);
 beamformed_Signal = diag(wi) * inputSig;
 

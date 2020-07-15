@@ -1,4 +1,4 @@
-function e = steeringVector(xPos, yPos, zPos, gamma, use_gamma, f, c, thetaScanAngles, phiScanAngles)
+function e = steeringVector(xPos, yPos, zPos, gamma, radius, use_gamma, f, c, thetaScanAngles, phiScanAngles)
 %steeringVector - calculate steering vector of array
 %
 %Calculates the steering vector for different scanning angles
@@ -49,7 +49,7 @@ e = zeros(M, N, P);
 for y = 1:M
     for x = 1:N
         if(use_gamma) 
-            e(y, x, :) = exp(1j * k * cos(thetaScanningAngles(x) - gamma)); % do we need radius here?
+            e(y, x, :) = exp(1j * k * radius * cos(thetaScanningAngles(x) - gamma)); % do we need radius here?
         else 
            angleT = [sin(phiScanAngles(x)) * cos(thetaScanAngles(y)); ...
                       sin(phiScanAngles(x)) * sin(thetaScanAngles(y)); ...
