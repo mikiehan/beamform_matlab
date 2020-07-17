@@ -38,10 +38,10 @@ fi = 19e3; % center frequency of FMCW from 18kHz - 20 kHz
 steeringVec_(j,0) = cos(2*PI*16000*((0.054*(cos((i*PI)/180.0) - cos( j*((360.0*PI)/(8.0*180.0)) - ((i*PI)/180.0))))/330.0));
  
 % complex ebi
-%ebi = steeringVector(xPos, yPos, zPos, gamma, radius, true , fi, c, thetaScanningAngles, phiScanningAngles);
+ebi = steeringVector(xPos, yPos, zPos, gamma, radius, true , fi, c, thetaScanningAngles, phiScanningAngles);
 
 % real ebi 
-ebi = cos(2*pi*16000*((radius*(cos((angle*pi)/180) - cos(channel * ((360*pi)/(8 * 180)) - ((angle*pi)/180))))/330.0));
+%ebi = cos(2*pi*16000*((radius*(cos((angle*pi)/180) - cos(channel * ((360*pi)/(8 * 180)) - ((angle*pi)/180))))/330.0));
 wi = weightingVectorMVDR(inputSig, ebi);
 beamformed_Signal = zeros(M, length(y0));
 for angle = 1:M
