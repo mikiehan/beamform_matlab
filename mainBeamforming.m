@@ -35,7 +35,7 @@ inputSig = inputSig'; % P by L (L is number of samples)
 c = 3.40e2; % Speed of sound (m/s)
 fi = 19e3; % center frequency of FMCW from 18kHz - 20 kHz
 
-steeringVec_(j,0) = cos(2*PI*16000*((0.054*(cos((i*PI)/180.0) - cos( j*((360.0*PI)/(8.0*180.0)) - ((i*PI)/180.0))))/330.0));
+%steeringVec_(j,0) = cos(2*PI*16000*((0.054*(cos((i*PI)/180.0) - cos( j*((360.0*PI)/(8.0*180.0)) - ((i*PI)/180.0))))/330.0));
  
 % complex ebi
 ebi = steeringVector(xPos, yPos, zPos, gamma, radius, true , fi, c, thetaScanningAngles, phiScanningAngles);
