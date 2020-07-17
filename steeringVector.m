@@ -58,3 +58,8 @@ for y = 1:M
         end
     end
 end
+
+%         %steeringVec2(mic, angle) = cos(angle - 2*pi * (mic-1)/8);
+x2 = radius*(cos(angle) - cos(j*((360.0)/(8.0) - angle))
+ebi = cos(k*x);
+
