@@ -8,10 +8,9 @@ txSignal = amp*sin(2*pi*fc*t);
 s_Pos = [0, 5, 0]; % source position in meter
 c = 340;
 %c = physconst('LightSpeed');
-radius = 0.5; 
-mic = phased.IsotropicAntennaElement('FrequencyRange',[20 fc+2e3]);
-% mic = phased.OmnidirectionalMicrophoneElement(...
-%     'FrequencyRange',[20 fc+5e3]);
+radius = 0.05; 
+mic = phased.OmnidirectionalMicrophoneElement(...
+     'FrequencyRange',[20 fc+5e3]);
 P = 10;
 incidentAngle = [90;0];
 wavelength = c/fc;
